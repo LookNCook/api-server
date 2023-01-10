@@ -26,9 +26,14 @@ const swaggerUi = require('swagger-ui-express');
 app.use(bodyParser.json())
 
 var orderStore = {}
+var chefsStore = require('./chefs.json')
+var dishStore = require('./dishes.json')
 
 const order = require('./routes/order.js');
 order.setup(app, orderStore);
+
+const chefs = require('./routes/chefs.js');
+chefs.setup(app, chefsStore);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification));
 
