@@ -35,6 +35,9 @@ order.setup(app, orderStore);
 const chefs = require('./routes/chefs.js');
 chefs.setup(app, chefsStore);
 
+const dishes = require('./routes/dishes.js');
+dishes.setup(app, dishStore);
+
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification));
 
 const port = 3000;
