@@ -71,7 +71,7 @@ module.exports.setup = (app, orderStore) => {
             tableID: req.body.tableID,
             seatID: req.body.seatID,
             dishID: req.body.dishID,
-            status: 'placed',
+            status: 'PLACED',
             cost: 750 /*placeholder value*/
         }
 

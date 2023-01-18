@@ -25,7 +25,7 @@ const swaggerUi = require('swagger-ui-express');
 
 app.use(bodyParser.json())
 
-var orderStore = {}
+var orderStore = require('./orders.json')
 var chefsStore = require('./chefs.json')
 var dishStore = require('./dishes.json')
 

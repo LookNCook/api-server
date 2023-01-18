@@ -69,7 +69,7 @@ module.exports.setup = (app, chefsStore) => {
      *         description: Validation exception
      */
     app.put('/chefs', (req, res) => {
-        chefsStore = req.body;
+        chefsStore.push(req.body);
         res.send(chefsStore)
     })
 
