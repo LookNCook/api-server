@@ -62,6 +62,9 @@ module.exports.setup = (app, orderStore) => {
      *         description: Invalid input
      */
     app.post('/order', (req, res) => {
+
+        console.log('Seat ' + req.body.seatID + ' from table ' + req.body.tableID + ' wants to order dish ' + req.body.dishID)
+
         // Get new OrderId
         const orderId = ++Object.keys(orderStore).length
 
@@ -80,6 +83,8 @@ module.exports.setup = (app, orderStore) => {
 
         // Return response
         res.send(newOrder)
+
+        console.log('A new order with ID ' + newOrder.orderID + ' has been placed')
     });
 
      /**
