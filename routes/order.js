@@ -23,7 +23,19 @@ module.exports.setup = (app, orderStore) => {
      */
     app.get('/order', (req, res) => {
         let orders = Object.values(orderStore)
-        res.send(orders)
+        if (req.query.chefID) {
+            console.log('orders assigned to chef with ID ' + req.query.chefID + ' have been requested')
+            let filteredOrders = []
+            for (let order of orders) {
+                if (order.chefID.toString() === req.query.chefID) {
+                    filteredOrders.push(order)
+                }
+            }
+            res.send(filteredOrders)
+        } else {
+            console.log('all orders have been requested')
+            res.send(orders)
+        }
     });
 
     /**
@@ -137,7 +149,7 @@ module.exports.setup = (app, orderStore) => {
             }
             res.send(orderStore[orderId])
         } else {
-            res.send(404)
+            res.sendStatus(404)
         }
     })
 

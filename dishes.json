@@ -1,7 +1,7 @@
 {
     "15": {
-        "id": 15,
-        "name": "Schnitzel mit Pommes",
-        "price": 750
+        "dishID": 15,
+        "dishName": "Hamburger",
+        "price": "4,50 €"
     }
 }

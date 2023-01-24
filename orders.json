@@ -1,10 +1,38 @@
 {
-  "21": {
-    "orderID": 21,
-    "tableID": 10,
-    "seatID": 11,
-    "dishID": 12,
-    "cost": 1337,
-    "status": "PLACED"
+  "1": {
+    "orderID": 1,
+    "tableID": 1,
+    "seatID": 1,
+    "dish": {
+      "dishID": 1,
+      "dishName": "Hamburger",
+      "price": "4,50 €"
+    },
+    "status": "PLACED",
+    "chefID": 1
+  },
+  "2": {
+    "orderID": 2,
+    "tableID": 1,
+    "seatID": 2,
+    "dish": {
+      "dishID": 2,
+      "dishName": "vegetarian Hamburger",
+      "price": "5,00 €"
+    },
+    "status": "PLACED",
+    "chefID": 2
+  },
+  "3": {
+    "orderID": 3,
+    "tableID": 1,
+    "seatID": 3,
+    "dish": {
+      "dishID": 3,
+      "dishName": "vegan Hamburger",
+      "price": "5,50 €"
+    },
+    "status": "PLACED",
+    "chefID": 1
   }
 }
