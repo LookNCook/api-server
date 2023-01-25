@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 
 // Sets up the routes.
-module.exports.setup = (app, orderStore, dishStore) => {
+module.exports.setup = (app, orderStore, dishStore, chefStore) => {
     /**
      * @openapi
      * /order:
@@ -82,6 +82,9 @@ module.exports.setup = (app, orderStore, dishStore) => {
 
         let dishes = Object.values(dishStore)
         let dish = dishes.find(dish => dish.dishID === req.body.dishID)
+
+        let leastBusiestChef = findLeastBusiestChef()
+
         if (dish === undefined) {
             res.sendStatus(500)
             console.log('The requested dish is not available')
@@ -93,7 +96,7 @@ module.exports.setup = (app, orderStore, dishStore) => {
                 seatID: req.body.seatID,
                 dish: dish,
                 status: 'PLACED',
-                chefID: 1
+                chefID: leastBusiestChef
             }
 
             // Store Order
@@ -106,6 +109,29 @@ module.exports.setup = (app, orderStore, dishStore) => {
             console.log(newOrder)
         }
     });
+
+    function findLeastBusiestChef() {
+        let chefForEveryOrder = []
+
+        let chefs = Object.values(chefStore)
+        for (let chef of chefs) {
+            chefForEveryOrder.push(chef.chefID)
+        }
+
+        console.log(chefForEveryOrder)
+
+        let orders = Object.values(orderStore)
+        for (let order of orders) {
+            chefForEveryOrder.push(order.chefID)
+        }
+
+        console.log(chefForEveryOrder)
+
+        const leastBusiestChef = [...chefForEveryOrder.reduce((r, n) => r.set(n, (r.get(n) || 0) + 1), new Map())]
+            .reduce((r, v) => v[1] < r[1] ? v : r)[0];
+
+        return leastBusiestChef
+    }
 
      /**
       * @openapi
