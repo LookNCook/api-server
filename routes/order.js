@@ -177,9 +177,9 @@ module.exports.setup = (app, orderStore, dishStore, chefStore) => {
                 orderID: orderId,
                 tableID: req.body.tableID,
                 seatID: req.body.seatID,
-                dishID: req.body.dishID,
+                dish: req.body.dish,
                 status: req.body.status,
-                cost: req.body.cost
+                chefID: req.body.chefID
             }
             res.send(orderStore[orderId])
         } else {
