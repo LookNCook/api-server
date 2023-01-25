@@ -3,5 +3,15 @@
         "dishID": 1,
         "dishName": "Hamburger",
         "price": "4,50 €"
+    },
+    "2": {
+        "dishID": 2,
+        "dishName": "vegetarian Hamburger",
+        "price": "5,00 €"
+    },
+    "3": {
+        "dishID": 3,
+        "dishName": "vegan Hamburger",
+        "price": "5,50 €"
     }
 }
