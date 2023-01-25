@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 
 // Sets up the routes.
-module.exports.setup = (app, orderStore) => {
+module.exports.setup = (app, orderStore, dishStore) => {
     /**
      * @openapi
      * /order:
@@ -80,14 +80,16 @@ module.exports.setup = (app, orderStore) => {
         // Get new OrderId
         const orderId = ++Object.keys(orderStore).length
 
+        let dishes = Object.values(dishStore)
+
         // Create Order Object
         const newOrder = {
             orderID: orderId,
             tableID: req.body.tableID,
             seatID: req.body.seatID,
-            dishID: req.body.dishID,
+            dish: dishes.find(dish => dish.dishID === req.body.dishID),
             status: 'PLACED',
-            cost: 750 /*placeholder value*/
+            chefID: 1
         }
 
         // Store Order
@@ -97,6 +99,7 @@ module.exports.setup = (app, orderStore) => {
         res.send(newOrder)
 
         console.log('A new order with ID ' + newOrder.orderID + ' has been placed')
+        console.log(newOrder)
     });
 
      /**

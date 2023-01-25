@@ -30,7 +30,7 @@ var chefsStore = require('./chefs.json')
 var dishStore = require('./dishes.json')
 
 const order = require('./routes/order.js');
-order.setup(app, orderStore);
+order.setup(app, orderStore, dishStore);
 
 const chefs = require('./routes/chefs.js');
 chefs.setup(app, chefsStore);
