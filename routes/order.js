@@ -27,7 +27,7 @@ module.exports.setup = (app, orderStore, dishStore, chefStore) => {
             console.log('orders assigned to chef with ID ' + req.query.chefID + ' have been requested')
             let filteredOrders = []
             for (let order of orders) {
-                if (order.chefID.toString() === req.query.chefID) {
+                if (order.chefID.toString() === req.query.chefID && (order.status === 'PLACED' || order.status === 'IN_PROGRESS')) {
                     filteredOrders.push(order)
                 }
             }
