@@ -2,17 +2,17 @@
     "1": {
         "chefID": 1,
         "chefName": "Nico Müller",
-        "imageID": 1
+        "imageID": 700017
     },
     "2": {
         "chefID": 2,
         "chefName": "Dr. Oetker",
-        "imageID": 2
+        "imageID": 700000
     },
     "3": {
         "chefID": 3,
         "chefName": "Captain Iglu",
-        "imageID": 3
+        "imageID": 700007
     },
     "4": {
         "chefID": 4,
