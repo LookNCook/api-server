@@ -1,8 +1,22 @@
-[
-    {
-        "id": 14,
-        "forename": "Thomas",
-        "lastname": "Cook",
-        "tasks": []
+{
+    "1": {
+        "chefID": 1,
+        "chefName": "Nico Müller",
+        "imageID": 1
+    },
+    "2": {
+        "chefID": 2,
+        "chefName": "Dr. Oetker",
+        "imageID": 2
+    },
+    "3": {
+        "chefID": 3,
+        "chefName": "Captain Iglu",
+        "imageID": 3
+    },
+    "4": {
+        "chefID": 4,
+        "chefName": "Rémy Gusteau",
+        "imageID": 4
     }
-]
+}

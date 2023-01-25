@@ -22,56 +22,8 @@ module.exports.setup = (app, chefsStore) => {
      *                 $ref: '#/components/schemas/Chef'
      */
     app.get('/chefs', (req, res) => {
-        res.send(chefsStore)
+        res.send(Object.values(chefsStore))
     });
-
-    /**
-     * @openapi
-     * /chefs:
-     *   put:
-     *     tags:
-     *       - chefs
-     *     summary: Update the task status in the chefs task list
-     *     description: The status of the task will be modified if the chef has completed all necessary steps
-     *     operationId: updateTask
-     *     requestBody:
-     *       description: Update an existent Task
-     *       content:
-     *         application/json:
-     *           schema:
-     *             $ref: '#/components/schemas/Chef'
-     *         application/xml:
-     *           schema:
-     *             $ref: '#/components/schemas/Chef'
-     *         application/x-www-form-urlencoded:
-     *           schema:
-     *             $ref: '#/components/schemas/Chef'
-     *       required: true
-     *     responses:
-     *       '200':
-     *         description: Successful operation
-     *         content:
-     *           application/json:
-     *             schema:
-     *               type: array
-     *               items:
-     *                 $ref: '#/components/schemas/Chef'          
-     *           application/xml:
-     *             schema:
-     *               type: array
-     *               items:
-     *                 $ref: '#/components/schemas/TaskStatus'
-     *       '400':
-     *         description: Invalid ID supplied
-     *       '404':
-     *         description: Task not found
-     *       '405':
-     *         description: Validation exception
-     */
-    app.put('/chefs', (req, res) => {
-        chefsStore.push(req.body);
-        res.send(chefsStore)
-    })
 
     /**
      * @openapi
