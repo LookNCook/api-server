@@ -81,25 +81,30 @@ module.exports.setup = (app, orderStore, dishStore) => {
         const orderId = ++Object.keys(orderStore).length
 
         let dishes = Object.values(dishStore)
+        let dish = dishes.find(dish => dish.dishID === req.body.dishID)
+        if (dish === undefined) {
+            res.sendStatus(500)
+            console.log('The requested dish is not available')
+        } else {
+            // Create Order Object
+            const newOrder = {
+                orderID: orderId,
+                tableID: req.body.tableID,
+                seatID: req.body.seatID,
+                dish: dish,
+                status: 'PLACED',
+                chefID: 1
+            }
 
-        // Create Order Object
-        const newOrder = {
-            orderID: orderId,
-            tableID: req.body.tableID,
-            seatID: req.body.seatID,
-            dish: dishes.find(dish => dish.dishID === req.body.dishID),
-            status: 'PLACED',
-            chefID: 1
+            // Store Order
+            orderStore[orderId] = newOrder
+
+            // Return response
+            res.send(newOrder)
+
+            console.log('A new order with ID ' + newOrder.orderID + ' has been placed')
+            console.log(newOrder)
         }
-
-        // Store Order
-        orderStore[orderId] = newOrder
-
-        // Return response
-        res.send(newOrder)
-
-        console.log('A new order with ID ' + newOrder.orderID + ' has been placed')
-        console.log(newOrder)
     });
 
      /**
