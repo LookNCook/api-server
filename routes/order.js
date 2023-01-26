@@ -122,7 +122,8 @@ module.exports.setup = (app, orderStore, dishStore, chefStore) => {
 
         let orders = Object.values(orderStore)
         for (let order of orders) {
-            chefForEveryOrder.push(order.chefID)
+            if (order.status === 'PLACED' || order.status === 'IN_PROGRESS')
+                chefForEveryOrder.push(order.chefID)
         }
 
         console.log(chefForEveryOrder)
@@ -182,6 +183,8 @@ module.exports.setup = (app, orderStore, dishStore, chefStore) => {
                 chefID: req.body.chefID
             }
             res.send(orderStore[orderId])
+
+            console.log("Order " + orderId + " has been updated to status " + req.body.status )
         } else {
             res.sendStatus(404)
         }

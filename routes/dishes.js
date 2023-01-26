@@ -22,6 +22,7 @@ module.exports.setup = (app, dishStore) => {
      *                 $ref: '#/components/schemas/Dish'
      */
     app.get('/dishes', (req, res) => {
+        console.log("Dishes have been requested")
         res.send(Object.values(dishStore))
     })
 
