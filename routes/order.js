@@ -192,6 +192,23 @@ module.exports.setup = (app, orderStore, dishStore, chefStore) => {
 
     /**
      * @openapi
+     * /order:
+     *   delete:
+     *    tags:
+     *      - order
+     *    summary: Delete all Orders
+     *    description: Delete all orders from the order store
+     *    responses:
+     *      '200':
+     *        description: successful operation         
+     */
+    app.delete('/order', (req, res) => {
+        orderStore = {}
+        res.sendStatus(200)
+    });
+
+    /**
+     * @openapi
      * components:
      *   schemas:
      *     OrderPlacement:
