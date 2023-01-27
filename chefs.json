@@ -18,5 +18,10 @@
         "chefID": 4,
         "chefName": "Rémy Gusteau",
         "imageID": 4
+    },
+    "5": {
+        "chefID": 5,
+        "chefName": "Steffen Henssler",
+        "imageID": 5
     }
 }
