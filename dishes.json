@@ -1,17 +1,62 @@
 {
     "1": {
         "dishID": 1,
-        "dishName": "Hamburger",
-        "price": "4,50 €"
+        "dishName": "Steak Sandwich",
+        "price": "7,00 €"
     },
     "2": {
         "dishID": 2,
+        "dishName": "Fleischsalat",
+        "price": "4,50 €"
+    },
+    "11": {
+        "dishID": 10,
+        "dishName": "Hamburger",
+        "price": "4,50 €"
+    },
+    "12": {
+        "dishID": 12,
         "dishName": "vegetarian Hamburger",
         "price": "5,00 €"
     },
-    "3": {
-        "dishID": 3,
+    "13": {
+        "dishID": 13,
         "dishName": "vegan Hamburger",
         "price": "5,50 €"
+    },
+    "14": {
+        "dishID": 14,
+        "dishName": "Pizza Magherita",
+        "price": "6,00 €"
+    },
+    "15": {
+        "dishID": 15,
+        "dishName": "Spaghetti Bolognese",
+        "price": "4,00 €"
+    },
+    "21": {
+        "dishID": 21,
+        "dishName": "Schokoeis",
+        "price": "3,00 €"
+    },
+    "22": {
+        "dishID": 22,
+        "dishName": "Apfelstrudel",
+        "price": "5,00 €"
+    },
+    "31": {
+        "dishID": 31,
+        "dishName": "Radeberger Pils",
+        "price": "3,50 €"
+    },
+    "32": {
+        "dishID": 32,
+        "dishName": "Kolle Mate",
+        "price": "4,00 €"
+    },
+    "33": {
+        "dishID": 33,
+        "dishName": "Espresso",
+        "price": "2,50 €"
     }
 }
